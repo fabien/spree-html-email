@@ -50,9 +50,9 @@
           <%= item.variant.product.name %>
           <%= "(" + variant_options(item.variant) + ")" unless item.variant .option_values.empty? %>
         </td>
-        <td class="price number"><%= number_to_currency(item.price) %></td>
+        <td class="price number"><%= money(item.price) %></td>
         <td class="qty number"><%= item.quantity %></td>
-        <td class="total number"><%= number_to_currency(item.price * item.quantity) %></td>
+        <td class="total number"><%= money(item.price * item.quantity) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -62,7 +62,7 @@
         <%= t(:subtotal) %>
       </td>
       <td class="total number">
-        <%= number_to_currency order.item_total %>
+        <%= money order.item_total %>
       </td>
     </tr>
   </tbody>
@@ -74,7 +74,7 @@
           <%= adjustment.label %>
         </td>
         <td class="total number">
-          <%= number_to_currency adjustment.amount %>
+          <%= money adjustment.amount %>
         </td>
       </tr>
     <% end %>
@@ -85,7 +85,7 @@
         <%= t(:order_total) %>
       </td>
       <td class="total number">
-        <span id="order_total"><%= number_to_currency order.total %></span>
+        <span id="order_total"><%= money order.total %></span>
       </td>
     </tr>
   </tbody>
