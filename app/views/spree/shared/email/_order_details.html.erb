@@ -5,7 +5,7 @@
   </tr>
   <tr class="alt">
     <td>Payment Method</td>
-    <td><%= order.payments.collect {|p| p.payment_method.name }.join(', ') %></td>
+    <td><%= order.payments.completed.collect {|p| p.payment_method.name }.join(', ') %></td>
   </tr>
   <% if order.canceled? %>
     <tr>
