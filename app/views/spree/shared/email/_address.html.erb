@@ -1,6 +1,10 @@
 <div class="details">
   <span class="full-name"><%= address.full_name %></span>
   <br/>
+  <% if address.company.present? %>
+    <br />
+    <%= address.company %>
+  <% end%>
   <%= address.address1 %>
   <% if address.address2.present? %>
     <br/>
